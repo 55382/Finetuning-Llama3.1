@@ -1,4 +1,4 @@
-# Finetuning-Llama3.1
+# Finetuning-Llama3.2
 Llama-3.2 1B+3B Conversational + 2x faster finetuning
 Author Tushar Aggarwal
 To install Unsloth on your own computer, follow the installation instructions on our Github page here.
