@@ -2,19 +2,19 @@ This project  involves fine-tuning the Llama 3.2 model using Unsloth, a tool tha
 
 ### Key Highlights:
 1. **Unsloth Setup**:
-   - You used **Unsloth** for faster fine-tuning, enabling you to achieve up to 2x faster results. Unsloth also supports various models, including Llama, Mistral, Phi, and others.
-   - You fine-tuned the Llama 3.2 model with **4-bit quantization** (which helps with memory efficiency and speed).
+   - we used **Unsloth** for faster fine-tuning, enabling you to achieve up to 2x faster results. Unsloth also supports various models, including Llama, Mistral, Phi, and others.
+   - we fine-tuned the Llama 3.2 model with **4-bit quantization** (which helps with memory efficiency and speed).
 
 2. **Model and Dataset**:
-   - You utilized the **FineTome-100k dataset** (converted from ShareGPT format to HuggingFace's generic multiturn format), which consists of conversations. These datasets are preprocessed to be compatible with the model and task at hand.
+   - we utilized the **FineTome-100k dataset** (converted from ShareGPT format to HuggingFace's generic multiturn format), which consists of conversations. These datasets are preprocessed to be compatible with the model and task at hand.
    - You used the `standardize_sharegpt` function to convert the dataset to HuggingFace's format.
 
 3. **Training Setup**:
-   - You set up **LoRA adapters** to only update a small percentage of the parameters (e.g., 1-10%) for more efficient training.
+   - we set up **LoRA adapters** to only update a small percentage of the parameters (e.g., 1-10%) for more efficient training.
    - The training involved **gradient accumulation** and **gradient checkpointing** to optimize memory usage.
 
 4. **Training Procedure**:
-   - You employed the **SFTTrainer** from HuggingFace's **TRL** library for supervised fine-tuning.
+   - we employed the **SFTTrainer** from HuggingFace's **TRL** library for supervised fine-tuning.
    - Only the assistant responses (ignoring the user's input) were used for training via `train_on_responses_only`, which optimizes the model for conversational tasks.
 
 5. **Memory Efficiency**:
@@ -22,7 +22,7 @@ This project  involves fine-tuning the Llama 3.2 model using Unsloth, a tool tha
    - The **gradient accumulation steps** helped ensure that you could process larger batches without running into memory issues.
 
 6. **Inference**:
-   - You performed inference on the fine-tuned model by providing conversational prompts like the Fibonacci sequence continuation.
+   - we performed inference on the fine-tuned model by providing conversational prompts like the Fibonacci sequence continuation.
    - The **temperature** and **min_p** values were adjusted for diverse generation outputs, and you used continuous inference with a **TextStreamer** to see the model's predictions in real-time.
 
 ### Example of Model Usage:
